@@ -485,7 +485,7 @@ pmm:
     limits: {}
 
 backup:
-  enabled: true
+  enabled: false
   image: ""
   # backoffLimit: 6
   # serviceAccountName: percona-xtradb-cluster-operator
