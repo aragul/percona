@@ -44,7 +44,8 @@ pxc:
   size: 3
   image:
     repository: percona/percona-xtradb-cluster
-    tag: 8.0.29-21.1
+  # tag: 8.0.29-21.1
+    tag: 5.7.42
   # imagePullPolicy: Always
   autoRecovery: true
   # expose:
@@ -104,16 +105,16 @@ pxc:
   #  disktype: ssd
   affinity:
     antiAffinityTopologyKey: "kubernetes.io/hostname"
-    # advanced:
-    #   nodeAffinity:
-    #     requiredDuringSchedulingIgnoredDuringExecution:
-    #       nodeSelectorTerms:
-    #       - matchExpressions:
-    #         - key: kubernetes.io/e2e-az-name
-    #           operator: In
-    #           values:
-    #           - e2e-az1
-    #           - e2e-az2
+      advanced:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: db
+                operator: In
+                values:
+                - percona
+               #- e2e-az2
   tolerations: []
     # - key: "node.alpha.kubernetes.io/unreachable"
     #   operator: "Exists"
@@ -272,15 +273,15 @@ haproxy:
   # serviceAccountName: percona-xtradb-cluster-operator-workload
   affinity:
     antiAffinityTopologyKey: "kubernetes.io/hostname"
-    # advanced:
-    #   nodeAffinity:
-    #     requiredDuringSchedulingIgnoredDuringExecution:
-    #       nodeSelectorTerms:
-    #       - matchExpressions:
-    #         - key: kubernetes.io/e2e-az-name
-    #           operator: In
-    #           values:
-    #           - e2e-az1
+      advanced:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: db
+                operator: In
+                values:
+                - percona
     #           - e2e-az2
   tolerations: []
     # - key: "node.alpha.kubernetes.io/unreachable"
