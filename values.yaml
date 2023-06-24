@@ -101,19 +101,19 @@ pxc:
   sidecarResources:
     requests: {}
     limits: {}
-  nodeSelector: {}
-  #  disktype: ssd
+  nodeSelector: 
+    db: percona
   affinity:
     antiAffinityTopologyKey: "kubernetes.io/hostname"
-      advanced:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: db
-                operator: In
-                values:
-                - percona
+    #  advanced:
+    #    nodeAffinity:
+    #      requiredDuringSchedulingIgnoredDuringExecution:
+    #        nodeSelectorTerms:
+    #        - matchExpressions:
+    #          - key: db
+    #            operator: In
+    #            values:
+    #            - percona
                #- e2e-az2
   tolerations: []
     # - key: "node.alpha.kubernetes.io/unreachable"
@@ -268,20 +268,20 @@ haproxy:
   sidecarResources:
     requests: {}
     limits: {}
-  nodeSelector: {}
-  #  disktype: ssd
+  nodeSelector: 
+    db: percona
   # serviceAccountName: percona-xtradb-cluster-operator-workload
   affinity:
     antiAffinityTopologyKey: "kubernetes.io/hostname"
-      advanced:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: db
-                operator: In
-                values:
-                - percona
+    #  advanced:
+    #    nodeAffinity:
+    #      requiredDuringSchedulingIgnoredDuringExecution:
+    #        nodeSelectorTerms:
+    #        - matchExpressions:
+    #          - key: db
+    #            operator: In
+    #            values:
+    #            - percona
     #           - e2e-az2
   tolerations: []
     # - key: "node.alpha.kubernetes.io/unreachable"
