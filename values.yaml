@@ -230,7 +230,7 @@ haproxy:
   #  iam.amazonaws.com/role: role-arn
   labels: {}
   #  rack: rack-22
-  # serviceType: ClusterIP
+  serviceType: loadBalancerIP
   # externalTrafficPolicy: Cluster
   # runtimeClassName: image-rc
   # loadBalancerSourceRanges:
