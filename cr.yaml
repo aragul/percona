@@ -1,0 +1,10 @@
+apiVersion: pxc.percona.com/v1
+kind: PerconaXtraDBCluster
+metadata:
+  name: cluster1
+spec:
+  pxc:
+    volumeSpec:
+      hostPath:  
+        path: /data/mysql
+        type: Directory
