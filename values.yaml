@@ -138,7 +138,7 @@ pxc:
     #accessMode: ReadWriteOnce
     #size: 160Gi
     hostPath:
-      path: /data/mysql
+      path: /data/mysql/
       type: Directory
   # If you set this to true the cluster will be created without TLS
   disableTLS: false
@@ -166,10 +166,10 @@ pxc:
   #containerSecurityContext:
   #  privileged: false
   # A custom Kubernetes Security Context for a Pod to be used instead of the default one
-  podSecurityContext:
-    fsGroup: 1001
-    supplementalGroups:
-    - 1001
+  #podSecurityContext:
+  #  fsGroup: 1001
+  #  supplementalGroups:
+  #  - 1001
   # serviceAccountName: percona-xtradb-cluster-operator-workload
 
 haproxy:
