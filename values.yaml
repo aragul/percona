@@ -185,7 +185,7 @@ haproxy:
   enabled: true
   size: 3
   image: ""
-  # imagePullPolicy: Always
+  imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   # - name: private-registry-credentials
 #  configuration: |
@@ -279,7 +279,8 @@ haproxy:
   sidecarResources:
     requests: {}
     limits: {}
-  nodeSelector: {}
+  nodeSelector: 
+    db: percona
   #  disktype: ssd
   # serviceAccountName: percona-xtradb-cluster-operator-workload
   affinity:
@@ -294,10 +295,10 @@ haproxy:
     #           values:
     #           - e2e-az1
     #           - e2e-az2
-  tolerations: []
-    # - key: "node.alpha.kubernetes.io/unreachable"
-    #   operator: "Exists"
-    #   effect: "NoExecute"
+  tolerations: 
+    - key: "percona"
+      operator: "Exists"
+      effect: "NoExecute"
     #   tolerationSeconds: 6000
   gracePeriod: 30
   # only one of `maxUnavailable` or `minAvailable` can be set.
@@ -496,7 +497,7 @@ pmm:
     limits: {}
 
 backup:
-  enabled: true
+  enabled: false
   # allowParallel: true
   image:
     repository: percona/percona-xtradb-cluster-operator
