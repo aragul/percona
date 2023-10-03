@@ -126,7 +126,7 @@ pxc:
     maxUnavailable: 1
     # minAvailable: 0
   persistence:
-    enabled: false
+    enabled: true
     ## percona data Persistent Volume Storage Class
     ## If defined, storageClassName: <storageClass>
     ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -134,11 +134,11 @@ pxc:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    # storageClass: "-"
-  #  accessMode: ReadWriteOnce
-  #  size: 160Gi
-  #  hostPath:
-  #    path: /data/mysql
+    storageClass: "-"
+    #accessMode: ReadWriteOnce
+    #size: 160Gi
+    hostPath:
+      path: /data/mysql
   #    type: Directory
   # If you set this to true the cluster will be created without TLS
   disableTLS: false
