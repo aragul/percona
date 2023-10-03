@@ -139,7 +139,7 @@ pxc:
     #size: 8Gi
     hostPath:
       path: /data/mysql
-      type: Directory
+  #    type: Directory
   # If you set this to true the cluster will be created without TLS
   disableTLS: false
 
