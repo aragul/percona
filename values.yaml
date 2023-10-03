@@ -134,12 +134,22 @@ pxc:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: "-"
-    accessMode: ReadWriteOnce
-    size: 160Gi
-    hostPath:
-      path: /data/mysql
-      type: Directory
+    volumeSpec:
+      hostPath:
+        path: /data/mysql
+        type: Directory
+    containerSecurityContext:
+      privileged: false
+    podSecurityContext:
+      runAsUser: 1001
+      runAsGroup: 1001
+      supplementalGroups: [1001]
+    #storageClass: "-"
+    #accessMode: ReadWriteOnce
+    #size: 160Gi
+    #hostPath:
+    #  path: /data/mysql
+    #  type: Directory
   # If you set this to true the cluster will be created without TLS
   disableTLS: false
 
