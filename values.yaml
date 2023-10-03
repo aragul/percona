@@ -125,6 +125,10 @@ pxc:
     # only one of maxUnavailable or minAvaliable can be set
     maxUnavailable: 1
     # minAvailable: 0
+  volumeSpec:
+    hostPath:
+      path: /data
+      type: Directory
   persistence:
     enabled: false
     ## percona data Persistent Volume Storage Class
