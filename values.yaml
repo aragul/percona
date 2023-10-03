@@ -140,8 +140,8 @@ pxc:
     volumes:
     - name: datadir
       hostPath:
-        path: /data/mysql
-        type: Directory
+        path: /data
+        #type: Directory
   # If you set this to true the cluster will be created without TLS
   disableTLS: false
 
