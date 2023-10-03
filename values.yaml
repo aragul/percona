@@ -46,21 +46,6 @@ pxc:
     repository: percona/percona-xtradb-cluster
   #  tag: 8.0.32-24.2
     tag: 5.7.43
-  volumeSpec:
-#      emptyDir: {}
-    hostPath:
-      path: /data
-      type: Directory  
- #   volumeMounts:
- #   - mountPath: /var/lib/mysql
- #     name: mysql-volume
- # volumes:
- # - name: mysql-volume
- #   hostPath:
- #     # directory location on host
- #     path: /data/mysql
- #     # this field is optional
- #     type: Directory    
   imagePullPolicy: IfNotPresent
   autoRecovery: true
   # expose:
@@ -141,7 +126,7 @@ pxc:
     maxUnavailable: 1
     # minAvailable: 0
   persistence:
-    enabled: false
+    enabled: true
     ## percona data Persistent Volume Storage Class
     ## If defined, storageClassName: <storageClass>
     ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -150,9 +135,11 @@ pxc:
     ##   GKE, AWS & OpenStack)
     ##
     # storageClass: "-"
-    accessMode: ReadWriteOnce
-    size: 8Gi
-
+    #accessMode: ReadWriteOnce
+    #size: 8Gi
+    hostPath:
+      path: /data/mysql
+      type: Directory
   # If you set this to true the cluster will be created without TLS
   disableTLS: false
 
