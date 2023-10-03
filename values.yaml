@@ -47,16 +47,21 @@ pxc:
   #  tag: 8.0.32-24.2
     tag: 5.7.43
     name: mysql-folder
-    volumeMounts:
-    - mountPath: /var/lib/mysql
-      name: mysql-volume
-  volumes:
-  - name: mysql-volume
+  volumeSpec:
+#      emptyDir: {}
     hostPath:
-      # directory location on host
       path: /data/mysql
-      # this field is optional
-      type: Directory    
+      type: Directory  
+ #   volumeMounts:
+ #   - mountPath: /var/lib/mysql
+ #     name: mysql-volume
+ # volumes:
+ # - name: mysql-volume
+ #   hostPath:
+ #     # directory location on host
+ #     path: /data/mysql
+ #     # this field is optional
+ #     type: Directory    
   # imagePullPolicy: IfNotPresent
   autoRecovery: true
   # expose:
