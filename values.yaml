@@ -138,8 +138,8 @@ pxc:
     #accessMode: ReadWriteOnce
     #size: 160Gi
     hostPath:
-      path: /data
-    #  type: Directory
+      path: /data/mysql
+      type: DirectoryOrCreate
   # If you set this to true the cluster will be created without TLS
   disableTLS: false
 
