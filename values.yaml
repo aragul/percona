@@ -134,22 +134,12 @@ pxc:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    #volumeSpec:
-    hostPath:
-      path: /data/mysql
-      type: Directory
-    containerSecurityContext:
-      privileged: false
-    podSecurityContext:
-      runAsUser: 1001
-      runAsGroup: 1001
-      supplementalGroups: [1001]
     #storageClass: "-"
     #accessMode: ReadWriteOnce
     #size: 160Gi
-    #hostPath:
-    #  path: /data/mysql
-    #  type: Directory
+    hostPath:
+      path: /data/mysql
+      type: Directory
   # If you set this to true the cluster will be created without TLS
   disableTLS: false
 
@@ -173,13 +163,13 @@ pxc:
     successThreshold: 1
     failureThreshold: 3
   # A custom Kubernetes Security Context for a Container to be used instead of the default one
-  # containerSecurityContext:
-  #   privileged: false
+  #containerSecurityContext:
+  #  privileged: false
   # A custom Kubernetes Security Context for a Pod to be used instead of the default one
-  # podSecurityContext:
-  #   fsGroup: 1001
-  #   supplementalGroups:
-  #   - 1001
+  podSecurityContext:
+    fsGroup: 1001
+    supplementalGroups:
+    - 1001
   # serviceAccountName: percona-xtradb-cluster-operator-workload
 
 haproxy:
