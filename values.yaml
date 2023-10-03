@@ -61,7 +61,7 @@ pxc:
  #     path: /data/mysql
  #     # this field is optional
  #     type: Directory    
-  # imagePullPolicy: IfNotPresent
+  imagePullPolicy: IfNotPresent
   autoRecovery: true
   # expose:
   #   enabled: true
@@ -189,7 +189,7 @@ haproxy:
   enabled: true
   size: 3
   image: ""
-#  imagePullPolicy: IfNotPresent
+  imagePullPolicy: IfNotPresent
   imagePullSecrets: []
   # - name: private-registry-credentials
 #  configuration: |
