@@ -49,7 +49,7 @@ pxc:
   volumeSpec:
 #      emptyDir: {}
     hostPath:
-      path: /data/mysql
+      path: /data
       type: Directory  
  #   volumeMounts:
  #   - mountPath: /var/lib/mysql
