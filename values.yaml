@@ -112,8 +112,8 @@ pxc:
   sidecarResources:
     requests: {}
     limits: {}
-  nodeSelector: {}
-  #  disktype: ssd
+  nodeSelector: 
+    db: percona
   affinity:
     antiAffinityTopologyKey: "kubernetes.io/hostname"
     # advanced:
