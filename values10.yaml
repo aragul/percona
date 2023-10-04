@@ -126,7 +126,7 @@ pxc:
     maxUnavailable: 1
     # minAvailable: 0
   persistence:
-    enabled: true
+    enabled: false
     ## percona data Persistent Volume Storage Class
     ## If defined, storageClassName: <storageClass>
     ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -134,9 +134,9 @@ pxc:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: "localpercona"
-    accessMode: ReadWriteOnce
-    size: 200Gi
+    #storageClass: "localpercona"
+    #accessMode: ReadWriteOnce
+    #size: 200Gi
     #hostPath:
     #  path: /data/mysql
       #path: /var/lib/mysql
