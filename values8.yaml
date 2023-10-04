@@ -135,12 +135,12 @@ pxc:
     ##   GKE, AWS & OpenStack)
     ##
     storageClass: ""
-    #accessMode: ReadWriteOnce
-    #size: 160Gi
+    accessMode: ReadWriteOnce
+    size: 200Gi
     hostPath:
-      #path: /data/mysql
-      path: /var/lib/mysql
-      type: Directory
+      path: /data/mysql
+      #path: /var/lib/mysql
+      #type: Directory
   # If you set this to true the cluster will be created without TLS
   disableTLS: false
 
