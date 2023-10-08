@@ -134,7 +134,8 @@ pxc:
     ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
     ##   GKE, AWS & OpenStack)
     ##
-    storageClass: "nfs-client"
+    #storageClass: "nfs-client"
+    storageClass: "localpercona"
     accessMode: ReadWriteOnce
     size: 200Gi
     #hostPath:
