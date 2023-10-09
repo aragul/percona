@@ -117,7 +117,7 @@ pxc:
     #           - e2e-az2
   tolerations:
     - key: "percona"
-      operator: "Equal"
+      operator: "Exists"
       effect: "NoSchedule"
     #   tolerationSeconds: 6000
   gracePeriod: 600
