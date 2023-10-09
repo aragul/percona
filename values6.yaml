@@ -288,7 +288,7 @@ haproxy:
     #           values:
     #           - e2e-az1
     #           - e2e-az2
-  tolerations: []
+  tolerations: 
     - key1: "percona"
       operator: "Exists"
     #  effect: "NoExecute"
