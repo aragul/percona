@@ -178,7 +178,7 @@ haproxy:
   enabled: true
   size: 3
   image: ""
- # imagePullPolicy: IfNotPresent
+  # imagePullPolicy: Always
   imagePullSecrets: []
   # - name: private-registry-credentials
 #  configuration: |
