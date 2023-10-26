@@ -44,7 +44,7 @@ pxc:
   size: 3
   image:
     repository: percona/percona-xtradb-cluster
-    tag: 8.0.33-25.1
+    tag: 8.0.32
   #  tag: 5.7.43
   #imagePullPolicy: IfNotPresent
   autoRecovery: true
@@ -177,7 +177,9 @@ pxc:
 haproxy:
   enabled: true
   size: 3
-  image: ""
+  image: 
+    repository: percona/percona-xtradb-cluster-operator
+    tag: 1.13.0-haproxy
   # imagePullPolicy: Always
   imagePullSecrets: []
   # - name: private-registry-credentials
@@ -322,7 +324,9 @@ haproxy:
 proxysql:
   enabled: false
   size: 3
-  image: ""
+  image: 
+    repository: percona/percona-xtradb-cluster-operator
+    tag: 1.13.0-proxysql
   # imagePullPolicy: Always
   imagePullSecrets: []
 #  configuration: |
@@ -460,7 +464,9 @@ proxysql:
 
 logcollector:
   enabled: true
-  image: ""
+  image: 
+    repository: percona/percona-xtradb-cluster-operator
+    tag: 1.13.0-logcollector
   # imagePullPolicy: Always
   imagePullSecrets: []
   # configuration: |
@@ -497,8 +503,8 @@ backup:
   # allowParallel: true
   image:
     repository: percona/percona-xtradb-cluster-operator
-  #  tag: 1.13.0-pxc8.0-backup-pxb8.0.32
-    tag: 1.13.0-pxc5.7-backup-pxb2.4.28
+    tag: 1.13.0-pxc8.0-backup-pxb8.0.32
+  #  tag: 1.13.0-pxc5.7-backup-pxb2.4.28
   # backoffLimit: 6
   # serviceAccountName: percona-xtradb-cluster-operator
   # imagePullPolicy: Always
