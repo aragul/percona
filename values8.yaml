@@ -175,7 +175,7 @@ pxc:
   # serviceAccountName: percona-xtradb-cluster-operator-workload
 
 haproxy:
-  enabled: true
+  enabled: false
   size: 3
   image: ""
   #imagePullPolicy: IfNotPresent
@@ -409,7 +409,8 @@ proxysql:
   sidecarResources:
     requests: {}
     limits: {}
-  nodeSelector: {}
+  nodeSelector: 
+    db: percona
   #  disktype: ssd
   # serviceAccountName: percona-xtradb-cluster-operator-workload
   affinity:
@@ -424,7 +425,9 @@ proxysql:
     #           values:
     #           - e2e-az1
     #           - e2e-az2
-  tolerations: []
+  tolerations: 
+    - key1: "percona"
+      operator: "Exists"
     # - key: "node.alpha.kubernetes.io/unreachable"
     #   operator: "Exists"
     #   effect: "NoExecute"
