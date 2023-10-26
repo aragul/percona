@@ -44,7 +44,7 @@ pxc:
   size: 3
   image:
     repository: percona/percona-xtradb-cluster
-    tag: 8.0.33-25.1
+    tag: 8.0.32-24.2
   #  tag: 5.7.43
   #imagePullPolicy: IfNotPresent
   autoRecovery: true
@@ -177,7 +177,9 @@ pxc:
 haproxy:
   enabled: true
   size: 3
-  image: ""
+  image:
+    repository: percona/percona-xtradb-cluster
+    tag: 1.13.0-haproxy
   # imagePullPolicy: Always
   imagePullSecrets: []
   # - name: private-registry-credentials
