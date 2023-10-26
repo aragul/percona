@@ -320,7 +320,7 @@ haproxy:
   #   - 1001
 
 proxysql:
-  enabled: true
+  enabled: false
   size: 3
   image: ""
   # imagePullPolicy: Always
