@@ -175,7 +175,7 @@ pxc:
   # serviceAccountName: percona-xtradb-cluster-operator-workload
 
 haproxy:
-  enabled: false
+  enabled: true
   size: 3
   image: ""
  # imagePullPolicy: IfNotPresent
