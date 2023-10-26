@@ -116,8 +116,8 @@ pxc:
     #           - e2e-az1
     #           - e2e-az2
   tolerations:
-    - key1: "percona"
-      operator: "Exists"
+  - key1: "percona"
+    operator: "Exists"
     #  effect: "NoSchedule"
     #   tolerationSeconds: 6000
   gracePeriod: 600
@@ -291,8 +291,8 @@ haproxy:
     #           - e2e-az1
     #           - e2e-az2
   tolerations: 
-    - key1: "percona"
-      operator: "Exists"
+  - key1: "percona"
+    operator: "Exists"
     #  effect: "NoExecute"
     #   tolerationSeconds: 6000
   gracePeriod: 30
@@ -430,8 +430,8 @@ proxysql:
     #           - e2e-az1
     #           - e2e-az2
   tolerations: 
-    - key1: "percona"
-      operator: "Exists"
+  - key1: "percona"
+    operator: "Exists"
     # - key: "node.alpha.kubernetes.io/unreachable"
     #   operator: "Exists"
     #   effect: "NoExecute"
