@@ -177,9 +177,7 @@ pxc:
 haproxy:
   enabled: true
   size: 3
-  image:
-    repository: percona/percona-xtradb-cluster
-    tag: 1.13.0-haproxy
+  image: ""
   # imagePullPolicy: Always
   imagePullSecrets: []
   # - name: private-registry-credentials
