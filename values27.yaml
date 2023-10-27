@@ -126,7 +126,7 @@ pxc:
     maxUnavailable: 1
     # minAvailable: 0
   persistence:
-    enabled: false
+    enabled: true
     ## percona data Persistent Volume Storage Class
     ## If defined, storageClassName: <storageClass>
     ## If set to "-", storageClassName: "", which disables dynamic provisioning
@@ -175,7 +175,7 @@ pxc:
   # serviceAccountName: percona-xtradb-cluster-operator-workload
 
 haproxy:
-  enabled: false
+  enabled: true
   size: 3
   image: ""
   # imagePullPolicy: Always
@@ -320,7 +320,7 @@ haproxy:
   #   - 1001
 
 proxysql:
-  enabled: true
+  enabled: false
   size: 3
   image: ""
   # imagePullPolicy: Always
