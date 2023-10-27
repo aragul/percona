@@ -2,8 +2,8 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-finalizers:
-  - delete-pxc-pods-in-order
+finalizers: []
+#  - delete-pxc-pods-in-order
 ## Set this if you want to delete proxysql persistent volumes on cluster deletion
 #  - delete-proxysql-pvc
 ## Set this if you want to delete database persistent volumes on cluster deletion
