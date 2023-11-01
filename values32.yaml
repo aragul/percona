@@ -493,7 +493,7 @@ pmm:
     limits: {}
 
 backup:
-  enabled: false
+  enabled: true
   # allowParallel: true
   image:
     repository: percona/percona-xtradb-cluster-operator
